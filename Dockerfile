@@ -55,6 +55,7 @@ USER appuser
 EXPOSE 8088
 
 ENV SPRING_PROFILES_ACTIVE=prod
+ENV ANYTIME_DATASET_PATH=/app/anytime_rag_dataset/rag_ready_chunks
 ENV JAVA_OPTS="-Xms256m -Xmx512m -XX:+UseG1GC"
 
 ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar /app/app.jar"]

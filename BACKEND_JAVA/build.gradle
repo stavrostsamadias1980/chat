@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.4'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.anytime.chatbot'
+version = '3.0.0'
+description = 'Anytime.gr Hybrid Knowledge RAG Chatbot Backend - Pure Java Clean Architecture'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Core Web & WebSocket (Clean Architecture Presentation Layer)
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    
+    // JSON & Serialization
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    
+    // Testing (JUnit 5 & Mockito)
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.3'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.3'
+    testImplementation 'org.mockito:mockito-core:5.12.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.12.0'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+    }
+}
+
+bootRun {
+    mainClass = 'com.anytime.chatbot.AnytimeChatbotApplication'
+}

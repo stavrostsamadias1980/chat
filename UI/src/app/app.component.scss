@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  background: transparent;
+  pointer-events: none; /* Allows clicks to pass through to the host website anywhere except on the widget */
+
+  app-deep-chat-widget {
+    pointer-events: auto; /* Re-enable pointer events for the widget itself */
+  }
+}

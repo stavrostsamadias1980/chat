@@ -1,0 +1,29 @@
+# Node & Angular
+UI/node_modules/
+UI/.angular/
+UI/dist/
+.npm/
+
+# Java & Gradle
+BACKEND_JAVA/.gradle/
+BACKEND_JAVA/build/
+BACKEND_JAVA/target/
+.gradle/
+*.class
+
+# Old Local Models & Databases (Not needed for Pure Java in-memory RAG)
+DATABASE/
+*.onnx*
+*.bin
+
+# Python
+__pycache__/
+*.pyc
+crawl_cache/
+
+# IDE & OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
